@@ -1,0 +1,180 @@
+body {
+  background-color: #0f2435;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,.1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.app {
+  display: flex;
+}
+
+.sidebar {
+  min-width: 200px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #292b2d;
+  border-right: 1px solid rgba(255,255,255,.2);
+  overflow-y: scroll;
+}
+
+.main-area {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.tabs {
+  width: 100%;
+  background-color: rgba(0,0,0,.3);
+  color: white;
+  display: flex;
+}
+
+.tab-icon {
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+.tab-iconL {
+  font-size: 15px;
+  margin-right: 5px;
+}
+
+.tab-item {
+  padding: 0px 18px;
+  background-color: rgba(255,255,255,.1);
+  border-radius: 5px 5px 0 0;
+  width: fit-content;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0,.3);
+}
+
+.tab-item-active {
+  padding: 0px 18px;
+  background-color: rgba(255,255,255,.2);
+  border-radius: 5px 5px 0 0;
+  width: fit-content;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0,.3);
+}
+
+.tab-item:hover, .tab-item-active:hover {
+  opacity: .7;
+}
+
+.tab-item span, .tab-item-active span {
+  font-size: 13px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.editor {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#codigo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  padding: 10px;
+  font-stretch: condensed;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.funcion {
+  color: #bf56ba;
+}
+
+.numero {
+  color: orange;
+}
+
+.main-textarea {
+  width: 100%;
+  height: 80vh;
+  resize: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: none;
+  color: transparent;
+  font-size: 14px;
+  padding: 10px;
+  z-index: 100;
+  font-stretch: condensed;
+  font-weight: 300;
+  caret-color: #fff;
+  outline: none;
+  border: none;
+}
+
+.sidebar .sidebar-items {
+  width: 100%;
+  background-color: rgba(0,0,0,.3);
+  padding: 5px;
+  padding-left: 15px;
+  font-size: 13px;
+  list-style: none;
+  color: white;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+.sidebar-items:hover {
+  background-color: rgba(0,0,0,.2);
+}
+
+.sidebar-items i {
+  margin-right: 8px;
+}
+
+.icon-js {
+  color: #efe034;
+}
+
+.icon-python {
+  color: #597cb2;
+  transform: translateY(1px);
+}
+
+.icon-folder {
+  color: gray;
+}
+
+.sub {
+  padding-left: 10px;
+}
+
+.footer {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  background-color: rgba(0,0,0,.3);
+  padding: 5px;
+  padding-left: 15px;
+}
+
+.footer span {
+  color: gray;
+  font-size: 10px;
+}
