@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 import Sidebar from './components/sidebar';
 import 'codemirror/keymap/sublime';
-import 'codemirror/theme/monokai.css';
+import 'codemirror/theme/material-darker.css';
 import './lib/files/loader';
 import './App.scss';
 
-let code = "";
-
 function App() {
+  const [ code, setCode ] = useState('');
+
   return (
     <div className="app">
-      <Sidebar />
+      <Sidebar setCode={setCode} />
     <div className="main-area">
         <div className="tabs">
             <div className="tab-item-active">
@@ -23,17 +23,17 @@ function App() {
                 <span>users.py</span>
             </div>
         </div>
-          <div className="editor">
-            <CodeMirror
-              value={code}
-              className="main-textarea"
-              options={{
-                theme: 'monokai',
-                keyMap: 'sublime',
-                mode: 'jsx',
-              }}
-            />
-          </div>
+        <div className="editor">
+          <CodeMirror
+            value={code}
+            className="main-textarea"
+            options={{
+              theme: 'material-darker',
+              keyMap: 'sublime',
+              mode: 'jsx',
+            }}
+          />
+        </div>
     </div>
     </div>
   );
