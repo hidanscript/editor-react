@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { icons } from './icons';
 import { readDirectory, readFile } from '../../lib/files/loader';
 
 function Sidebar({ setCode, setCurrentFile }) {
@@ -11,28 +12,19 @@ function Sidebar({ setCode, setCurrentFile }) {
   };
 
   useEffect(() => {
-    console.log(readDirectory('./', setFiles));
+    console.log(readDirectory('./public/', setFiles));
   }, []);
+
+  const getClassNameByIconExtension = (file) => {
+    const nameSplit = file.name.split('.');
+    const extension = nameSplit[nameSplit.length - 1].toUpperCase();
+    return icons[`${extension}_ICON`] || icons.FOLDER_ICON;
+  };
 
   return (
     <div className="sidebar">
       {files.map((file, index) => {
-        let className = '';
-        if (file.name.endsWith('.js')) {
-          className = "fab fa-js-square icon-js";
-        } else if (file.name.endsWith('.py')) {
-          className = "fab fa-python icon-python";
-        } else if (file.name.endsWith('.md')) {
-          className = "fab fa-readme icon-python";
-        } else if (file.name.endsWith('.json')) {
-          className = "fas fa-chevron-right icon-js";
-        } else if (file.name.endsWith('.log')) {
-          className = "fas fa-bug icon-python";
-        } else if (file.name.endsWith('.git') || file.name.endsWith('.gitignore')) {
-          className = "fab fa-git-alt icon-git";
-        } else {
-          className = "fas fa-folder icon-folder";
-        }
+        const className = getClassNameByIconExtension(file);
         return <div key={index} className="sidebar-items" onClick={() => selectFile(file)}>
                   <i className={className}></i>
                   {file.name}
