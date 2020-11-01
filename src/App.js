@@ -9,7 +9,7 @@ import './App.scss';
 
 function App() {
   const [ code, setCode ] = useState('');
-  const [ currentFile, setCurrentFile ] = useState('');
+  const [ currentFile, setCurrentFile ] = useState({});
 
   return (
     <div className="app">

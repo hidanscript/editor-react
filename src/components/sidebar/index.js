@@ -7,7 +7,7 @@ function Sidebar({ setCode, setCurrentFile }) {
 
   const selectFile = (file) => {
     const content = readFile(file.dir);
-    setCurrentFile(file.name);
+    setCurrentFile(file);
     setCode(content);
   };
 
