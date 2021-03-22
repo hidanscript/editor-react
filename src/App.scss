@@ -59,12 +59,19 @@ body {
 }
 
 .tab-item {
-  padding: 0px 18px;
+  display: flex;
+  padding: 0px 16px;
   background-color: rgba(255,255,255,.1);
   border-radius: 5px 5px 0 0;
   width: fit-content;
   cursor: pointer;
   border: 1px solid rgba(0,0,0,.3);
+}
+
+.tab-close-icon {
+  font-size: 12px;
+  margin-left: 10px;
+  opacity: .5;
 }
 
 .tab-item-active {
